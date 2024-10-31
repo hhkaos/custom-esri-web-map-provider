@@ -25,20 +25,21 @@
 
     <script src="https://js.arcgis.com/4.25/"></script>
 
-    <script>
+    <script type="module">
+      import { myAPIKey } from './auth-credentials.js'
+      
       require([
         "esri/views/MapView", 
         "esri/WebMap", 
         "esri/config"
       ], (MapView, WebMap, esriConfig) => {
+    
+        esriConfig.apiKey = myAPIKey;  
 
         esriConfig.portalUrl = "http://localhost:3000/";
         
         const webmap = new WebMap({
-          portalItem: {
-            // autocasts as new PortalItem()
-            id: "f2e9b762544945f390ca4ac3671cfa72"
-          }
+          portalItem: { id: "afbb770f9d65402d9f1b053afabc4413" }
         });
         
         const view = new MapView({

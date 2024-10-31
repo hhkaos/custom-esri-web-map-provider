@@ -1,8 +1,16 @@
-const express = require('express');
+import express from 'express';
+import fs from 'fs';
+import https from 'https';
+import cors from 'cors';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// const express = require('express');
 const app = express();
-const fs = require('fs');
-const https = require('https');
-const cors = require('cors');
+
 app.use(cors({origin: '*'}));
 app.use(express.static('public'));
 
@@ -21,8 +29,8 @@ app.get('/sharing/rest/portals/self', (req, res) => {
 });
   
 https.createServer({
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')
+  key: fs.readFileSync('./src/server.key'),
+  cert: fs.readFileSync('./src/server.cert')
 }, app).listen(3000, () => {
   console.log('Listening...')
 });
