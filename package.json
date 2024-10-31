@@ -9,6 +9,7 @@
     "start-watch": "chokidar src",
     "serve": "http-server -p 7654 -c-1 -o src/index.html",
     "dev": "run-p start start-watch serve",
+    "backup": "node src/download-web-map.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -14,10 +14,10 @@ Create an `auth-credentials.js` file with the following info:
 
 ```js
 export const myAPIKey = '<YOUR API KEY';
-export const client_id = '<YOUR CLIENT ID>';
-export const client_secret = '<YOUR CLIENT SECRET>';
+export const clientId = '<YOUR CLIENT ID>';
+export const clientSecret = '<YOUR CLIENT SECRET>';
 
-export default { myAPIKey, client_id, client_secret } 
+export default { myAPIKey, clientId, clientSecret } 
 ```
 
 > **Note**: If you don't know how, check the [Tutorial: Create an API key](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/) and [Tutorial: Create OAuth credentials for app authentication](https://developers.arcgis.com/documentation/security-and-authentication/app-authentication/tutorials/create-oauth-credentials-app-auth/)
@@ -39,7 +39,7 @@ Create your own open ssl certificate: `openssl req -nodes -new -x509 -keyout src
 If you need help to make it work with ArcGIS Enterprise, ask in the issues.
 
 1. Open [download-web-map.js](./src/download-web-map.js) and edit the `webmapId` you want to download.
-2. Run `node download-web-map.js`
+2. Run `npm run backup`
 3. Edit [index.html](./src/index.html) and replace `portalItem: { id: "afbb770f9d65402d9f1b053afabc4413" }` with the same id.
 
 ## Questions/contributions
